@@ -1,0 +1,15 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /shipping
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/shipping-service
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    com.pycogroup.training: DEBUG

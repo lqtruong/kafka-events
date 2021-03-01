@@ -1,0 +1,15 @@
+server:
+  port: 8087
+  servlet:
+    context-path: /product
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/product-service
+
+logging:
+  level:
+    root: ERROR
+    org.springframework: ERROR
+    com.pycogroup.training: DEBUG
