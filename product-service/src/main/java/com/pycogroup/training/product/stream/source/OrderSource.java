@@ -1,4 +1,4 @@
-package com.pycogroup.training.order.stream.source;
+package com.pycogroup.training.product.stream.source;
 
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,10 +1,10 @@
-package com.pycogroup.training.shipping;
+package com.pycogroup.training.product;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProductApplicationTests {
+class ShippingApplicationTests {
 
 	@Test
 	void contextLoads() {

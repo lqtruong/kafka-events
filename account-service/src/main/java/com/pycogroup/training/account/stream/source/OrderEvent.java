@@ -1,4 +1,4 @@
-package com.pycogroup.training.order.event;
+package com.pycogroup.training.account.stream.source;
 
 import com.pycogroup.training.messaging.order.OrderMessage;
 

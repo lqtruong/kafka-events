@@ -1,13 +1,13 @@
-package com.pycogroup.training.shipping;
+package com.pycogroup.training.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductApplication {
+public class ShippingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductApplication.class, args);
+		SpringApplication.run(ShippingApplication.class, args);
 	}
 
 }

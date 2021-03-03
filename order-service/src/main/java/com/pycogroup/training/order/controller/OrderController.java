@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pycogroup.training.order.entity.Order;
-import com.pycogroup.training.order.event.OrderEvent;
+import com.pycogroup.training.order.stream.source.OrderEvent;
 import com.pycogroup.training.order.mapper.OrderMapper;
 import com.pycogroup.training.order.service.OrderService;
 

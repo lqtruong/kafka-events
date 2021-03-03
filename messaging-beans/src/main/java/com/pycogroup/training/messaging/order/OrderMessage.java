@@ -9,7 +9,7 @@ public class OrderMessage {
 
   private String id;
 
-  private String status;
+  private OrderStatus status;
   private double price;
   private String customerId;
   private String accountId;

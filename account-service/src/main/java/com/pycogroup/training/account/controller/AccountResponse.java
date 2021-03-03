@@ -1,7 +1,6 @@
-package com.pycogroup.training.order.controller;
+package com.pycogroup.training.account.controller;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,21 +9,18 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.pycogroup.training.messaging.date.DatePatterns;
-import com.pycogroup.training.order.entity.OrderStatus;
 
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class OrderResponse {
+public class AccountResponse {
 
   private String id;
 
-  private OrderStatus status;
-  private double price;
+  private String number;
+  private double balance;
   private String customerId;
-  private String accountId;
-  private List<String> productIds;
 
   @JsonFormat(pattern = DatePatterns.DATE_TIME_PATTERN)
   private LocalDateTime created;
