@@ -7,6 +7,20 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/product-service
+  cloud:
+    stream:
+      kafka: # kafka message broker
+        binder:
+          brokers: localhost:9092
+          replicationFactor: 1
+      bindings:
+        input: # channel:in => consumer
+          consumer:
+            partitioned: true
+          destination: orders_created
+          group: orders_product
+        output: # channel:out => producer
+          destination: orders_verifed_possibility
 
 logging:
   level:

@@ -1,9 +1,11 @@
 server:
   port: 8086
-#  servlet:
-#    context-path: /order
+  servlet:
+    context-path: /order
 
 spring:
+  profiles:
+    active: local
   data:
     mongodb:
       uri: mongodb://localhost:27017/order-service
@@ -22,6 +24,7 @@ spring:
         output: # channel:out => producer
           destination: orders_created # topic
           producer:
+            partitioned: true
             partitionKeyExpression: payload.customerId
             partitionCount: 2 # the number of groups (orders_account & orders_product)
 
