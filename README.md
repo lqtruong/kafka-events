@@ -1,4 +1,4 @@
-# Sample for Kafka for Messaging in Event-Based Microservices
+# Sample for Kafka Messaging in Microservices
 This is for a sample using Kafka as a Messaging system to organize the communication among the event-based microservices
 # Installation
 `mvn clean install -DskipTests`
