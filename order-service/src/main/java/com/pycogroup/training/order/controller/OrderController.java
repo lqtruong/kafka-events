@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pycogroup.training.order.entity.Order;
-import com.pycogroup.training.order.stream.source.OrderEvent;
+import com.pycogroup.training.order.entity.OrderVerification;
 import com.pycogroup.training.order.mapper.OrderMapper;
 import com.pycogroup.training.order.service.OrderService;
+import com.pycogroup.training.order.stream.source.OrderEvent;
 
 @RestController
 @RequestMapping("/orders")
@@ -35,6 +36,8 @@ public class OrderController {
   public ResponseEntity<OrderResponse> process(final @RequestBody OrderRequest order) {
     final Order savedOrder = orderService.create(orderMapper.toOrder(order));
     log.info("Order saved: {}", savedOrder);
+    final OrderVerification verification = orderService.createOrderVerification(OrderVerification.from(savedOrder));
+    log.info("OrderVerification saved: {}", verification);
     final boolean isSent = orderEvent.send(orderMapper.toMessage(savedOrder));
     log.info("Order sent: {}", isSent);
     return new ResponseEntity(orderMapper.toResponse(savedOrder), HttpStatus.CREATED);

@@ -6,6 +6,7 @@ import com.pycogroup.training.messaging.order.OrderMessage;
 import com.pycogroup.training.order.controller.OrderRequest;
 import com.pycogroup.training.order.controller.OrderResponse;
 import com.pycogroup.training.order.entity.Order;
+import com.pycogroup.training.order.entity.OrderVerification;
 
 @Mapper(componentModel = "spring")
 public interface OrderMapper {
@@ -16,6 +17,6 @@ public interface OrderMapper {
 
   Order toOrder(final OrderRequest orderRequest);
 
-  Order fromMessage(final OrderMessage orderMessage);
+  OrderVerification fromMessage(final OrderMessage orderMessage);
 
 }

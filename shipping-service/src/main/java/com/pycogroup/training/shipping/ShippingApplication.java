@@ -1,4 +1,4 @@
-package com.pycogroup.training.product;
+package com.pycogroup.training.shipping;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -5,6 +5,7 @@ spring:
   data:
     mongodb:
       uri: mongodb://localhost:27017/order-service
+      auto-index-creation: true
   cloud:
     stream:
       kafka: # kafka message broker

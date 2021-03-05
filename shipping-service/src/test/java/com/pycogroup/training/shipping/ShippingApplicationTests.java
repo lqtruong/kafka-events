@@ -1,4 +1,4 @@
-package com.pycogroup.training.product;
+package com.pycogroup.training.shipping;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
