@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.pycogroup.training.account.entity.Account;
 import com.pycogroup.training.account.repository.AccountRepository;
@@ -73,11 +74,13 @@ public class AccountServiceImpl implements AccountService {
   }
 
   @Override
+  @Transactional
   public Account add(final Account account) {
     return accountRepository.save(account);
   }
 
   @Override
+  @Transactional
   public Account update(final Account account) {
     final Account foundAccount = getById(account.getId());
     if (Objects.isNull(foundAccount)) {
@@ -96,11 +99,13 @@ public class AccountServiceImpl implements AccountService {
   }
 
   @Override
+  @Transactional
   public void delete(final String id) {
     accountRepository.deleteById(id);
   }
 
   @Override
+  @Transactional
   public List<Account> bulkAdd(final List<Account> accounts) {
     return accountRepository.saveAll(accounts);
   }
@@ -109,6 +114,5 @@ public class AccountServiceImpl implements AccountService {
   public Page<Account> findAll(final Pageable pageable) {
     return accountRepository.findAll(pageable);
   }
-
 
 }

@@ -19,6 +19,10 @@ public class CheckedStatus {
     return status.isFailed() || status.isNotVerified();
   }
 
+  boolean isAccepted() {
+    return status.isSuccessful();
+  }
+
   public static enum Result {
     NOT_VERIFIED, SUCCESSFUL, FAILED;
 

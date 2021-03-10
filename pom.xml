@@ -63,6 +63,7 @@
         <module>order-service</module>
         <module>product-service</module>
         <module>shipping-service</module>
+        <module>customer-service</module>
     </modules>
 
     <build>

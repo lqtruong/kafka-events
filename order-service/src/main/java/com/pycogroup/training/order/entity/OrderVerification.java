@@ -25,6 +25,7 @@ public class OrderVerification {
   @Id
   @Field(targetType = FieldType.OBJECT_ID)
   private String id;
+  private boolean deleted = false;
 
   @CreatedDate
   @JsonFormat(pattern = DatePatterns.DATE_TIME_PATTERN)
@@ -49,6 +50,10 @@ public class OrderVerification {
       return OrderStatus.REJECTED;
     }
     return OrderStatus.ACCEPTED;
+  }
+
+  public boolean isAccepted() {
+    return getStatus().isAccepted();
   }
 
 }

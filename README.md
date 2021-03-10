@@ -9,5 +9,6 @@ Locally, we can start those applications
 - localhost:8086 => order
 - localhost:8087 => product
 - localhost:8088 => shipping
+- localhost:8089 => customer
 
 # Tests

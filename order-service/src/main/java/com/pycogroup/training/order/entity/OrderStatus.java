@@ -8,4 +8,8 @@ public enum OrderStatus {
     return this == REJECTED;
   }
 
+  public boolean isAccepted() {
+    return this == ACCEPTED;
+  }
+
 }

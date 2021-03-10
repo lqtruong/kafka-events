@@ -5,6 +5,7 @@ import org.mapstruct.Mapper;
 import com.pycogroup.training.messaging.order.OrderMessage;
 import com.pycogroup.training.order.controller.OrderRequest;
 import com.pycogroup.training.order.controller.OrderResponse;
+import com.pycogroup.training.order.controller.OrderVerificationResponse;
 import com.pycogroup.training.order.entity.Order;
 import com.pycogroup.training.order.entity.OrderVerification;
 
@@ -18,5 +19,7 @@ public interface OrderMapper {
   Order toOrder(final OrderRequest orderRequest);
 
   OrderVerification fromMessage(final OrderMessage orderMessage);
+
+  OrderVerificationResponse toVerificationResponse(final OrderVerification orderVerification);
 
 }

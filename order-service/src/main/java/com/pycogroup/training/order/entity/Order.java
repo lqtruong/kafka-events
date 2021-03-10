@@ -32,6 +32,7 @@ public class Order {
   private String customerId;
   private String accountId;
   private List<String> productIds;
+  private boolean deleted = false;
 
   @CreatedDate
   @JsonFormat(pattern = DatePatterns.DATE_TIME_PATTERN)
