@@ -1,7 +1,5 @@
 server:
   port: 8088
-  servlet:
-    context-path: /shipping
 
 spring:
   data:
@@ -14,3 +12,8 @@ logging:
     root: ERROR
     org.springframework: ERROR
     com.pycogroup.training: DEBUG
+
+rest:
+  clients:
+    order: localhost:8086/orders
+    customer: localhost:8089/customers

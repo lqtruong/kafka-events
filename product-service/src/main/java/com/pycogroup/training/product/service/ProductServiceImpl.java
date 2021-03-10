@@ -29,7 +29,6 @@ public class ProductServiceImpl implements ProductService {
   private OrderSource orderSource;
 
   @Override
-  @Transactional
   public void process(final OrderMessage order) {
     log.info("Order processed: {}", order);
     final List<Product> products = productRepository.findAllInIds(order.getProductIds());
@@ -54,6 +53,7 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
+  @Transactional
   public Product order(final Product product) {
     if (!product.validId()) {
       throw new IllegalArgumentException("Product Id should not be blank or null");
@@ -69,11 +69,13 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
+  @Transactional
   public Product add(final Product product) {
     return productRepository.save(product);
   }
 
   @Override
+  @Transactional
   public Product update(final Product product) {
     final Product foundProduct = getById(product.getId());
     if (Objects.isNull(foundProduct)) {
@@ -92,11 +94,13 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
+  @Transactional
   public void delete(final String id) {
     productRepository.deleteById(id);
   }
 
   @Override
+  @Transactional
   public List<Product> bulkAdd(final List<Product> products) {
     return productRepository.saveAll(products);
   }

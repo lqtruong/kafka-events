@@ -1,5 +1,10 @@
 package com.pycogroup.training.order.service;
 
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.pycogroup.training.order.entity.Order;
 import com.pycogroup.training.order.entity.OrderVerification;
 
@@ -11,5 +16,14 @@ public interface OrderService {
 
   Order getById(final String id);
 
-  OrderVerification createOrderVerification(final OrderVerification orderVerification);
+  OrderVerification createVerification(final OrderVerification orderVerification);
+
+  Page<Order> getByAccountId(final String accountId, final Pageable pageable);
+
+  void delete(final String id);
+
+  OrderVerification getVerificationById(final String orderId);
+
+  List<OrderVerification> getVerificationByIds(final List<String> orderIds);
+
 }
