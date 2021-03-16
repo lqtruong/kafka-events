@@ -5,17 +5,20 @@ pipeline {
         JAVA_TOOL_OPTIONS = '-Duser.home=/var/maven'
     }
     agent any
-    /* agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v $HOME:/var/maven -v /var/run/docker.sock:/var/run/docker.sock --group-add 117 --network="host"'
-            reuseNode true
-        }
-    } */
+    tools {
+        maven 'Maven 3.6.3'
+        jdk 'OpenJDK11'
+    }
     triggers {
         pollSCM '* * * * *'
     }
     stages {
+        stage('Tools check') {
+            steps {
+                sh 'mvn --version'
+                sh 'java --version'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean compile -DskipTests'
