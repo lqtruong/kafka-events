@@ -1,6 +1,5 @@
-def BUILD_TIMEOUT = 5
 pipeline {
-    options {timeout(time: "${BUILD_TIMEOUT}", unit: 'MINUTES')}
+    options {timeout(time: "${BUILD_TIMEOUT_MINUTES}", unit: 'MINUTES')}
     environment {
         JAVA_TOOL_OPTIONS = '-Duser.home=/var/maven'
     }
