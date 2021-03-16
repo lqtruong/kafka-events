@@ -4,6 +4,7 @@ pipeline {
     environment {
         JAVA_TOOL_OPTIONS = '-Duser.home=/var/maven'
     }
+    agent any
     /* agent {
         docker {
             image 'maven:3-alpine'
