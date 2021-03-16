@@ -2,8 +2,8 @@ pipeline {
     options {timeout(time: "${BUILD_TIMEOUT}", unit: 'MINUTES')}
     environment {
         JAVA_TOOL_OPTIONS = '-Duser.home=/var/maven'
+        BUILD_TIMEOUT = 5
     }
-
     agent {
         docker {
             image 'maven:3-alpine'
