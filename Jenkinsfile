@@ -3,9 +3,10 @@ pipeline {
     environment {
         JAVA_TOOL_OPTIONS = '-Duser.home=/var/maven'
     }
+
     agent {
         docker {
-            image 'maven/3.6.3-openjdk-11'
+            image 'maven:3-alpine'
             args '-v $HOME:/var/maven -v /var/run/docker.sock:/var/run/docker.sock --group-add 117 --network="host"'
             reuseNode true
         }
