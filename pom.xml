@@ -71,7 +71,7 @@
 
     <modules>
 <!--         <module>account-service</module> -->
-<!--         <module>messaging-beans</module> -->
+        <module>messaging-beans</module>
         <module>order-service</module>
 <!--         <module>product-service</module> -->
 <!--         <module>shipping-service</module> -->
