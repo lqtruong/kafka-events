@@ -7,6 +7,7 @@ pipeline {
     tools {
         maven 'Maven 3.6.3'
         jdk 'OpenJDK11'
+        docker
     }
     triggers {
         pollSCM '* * * * *'
@@ -16,16 +17,27 @@ pipeline {
             steps {
                 sh 'mvn --version'
                 sh 'java --version'
+                //sh 'docker --version'
             }
         }
-        stage('Build') {
+        stage('Compile & Test') {
             steps {
-                sh 'mvn clean compile -DskipTests'
+                sh 'mvn clean compile test'
+            }
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
             }
         }
-        stage('Test') {
+        stage('SonarQube analysis') {
+            when {
+                branch 'develop'
+            }
             steps {
-                sh 'mvn test'
+                withSonarQubeEnv('SonarQube Server') {
+                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
+                }
             }
         }
     }
