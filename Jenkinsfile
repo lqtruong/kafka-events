@@ -4,22 +4,22 @@ pipeline {
         JAVA_TOOL_OPTIONS = '-Duser.home=/var/maven'
     }
     agent any
-    tools {
+    /*tools {
         maven 'Maven 3.6.3'
         jdk 'OpenJDK11'
         //docker
     }
     triggers {
         pollSCM '* * * * *'
-    }
+    }*/
     stages {
-        stage('Tools check') {
+        /*stage('Tools check') {
             steps {
                 sh 'mvn --version'
                 sh 'java --version'
                 //sh 'docker --version'
             }
-        }
+        }*/
         stage('Compile & Test') {
             steps {
                 sh 'mvn clean compile test'
