@@ -7,7 +7,7 @@ pipeline {
     tools {
         maven 'Maven 3.6.3'
         jdk 'OpenJDK11'
-        docker
+        //docker
     }
     triggers {
         pollSCM '* * * * *'
