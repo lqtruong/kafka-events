@@ -2,6 +2,7 @@ pipeline {
     options {timeout(time: "${BUILD_TIMEOUT_MINUTES}", unit: 'MINUTES')}
     environment {
         JAVA_TOOL_OPTIONS = '-Duser.home=/var/maven'
+        SONAR_HOST_URL = 'localhost:9000'
     }
     agent any
     tools {
@@ -36,7 +37,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('SonarQube Server') {
-                    println ${env.SONAR_HOST_URL}
+                    sh 'printenv'
                     sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
                 }
             }
