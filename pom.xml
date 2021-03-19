@@ -70,12 +70,12 @@
     </dependencyManagement>
 
     <modules>
-        <module>account-service</module>
-        <module>messaging-beans</module>
+<!--         <module>account-service</module> -->
+<!--         <module>messaging-beans</module> -->
         <module>order-service</module>
-        <module>product-service</module>
-        <module>shipping-service</module>
-        <module>customer-service</module>
+<!--         <module>product-service</module> -->
+<!--         <module>shipping-service</module> -->
+<!--         <module>customer-service</module> -->
     </modules>
 
     <build>
