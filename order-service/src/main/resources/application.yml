@@ -22,7 +22,6 @@ spring:
           destination: orders_created # topic
           producer:
             partitionKeyExpression: payload.customerId
-            partitionCount: 2 # the number of groups (orders_account & orders_product)
 
 logging:
   level:
