@@ -16,10 +16,10 @@ spring:
         input: # channel:in => consumer
           consumer:
             partitioned: true
-          destination: orders_created
-          group: orders_account
+          destination: top-orders-created
+          group: grp-orders-created-account
         output: # channel:out => producer
-          destination: orders_verifed_possibility
+          destination: top-orders-verified
 
 logging:
   level:

@@ -14,12 +14,13 @@ spring:
           replicationFactor: 1
       bindings:
         input: # channel:in => consumer
-          destination: orders_verifed_possibility # topic
+          destination: top-orders-verified # topic
+          group: grp-orders-verified
           consumer:
             resetOffsets: true
             startOffset: latest
         output: # channel:out => producer
-          destination: orders_created # topic
+          destination: top-orders-created # topic
           producer:
             partitionKeyExpression: payload.customerId
 
